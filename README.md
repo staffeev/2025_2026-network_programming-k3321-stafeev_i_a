@@ -1,10 +1,10 @@
 # 2025_2026-network_programming-k3321-stafeev_i_a
 
-University: [ITMO University](https://itmo.ru/ru/)
-Faculty: [FICT](https://fict.itmo.ru)
-Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)
-Year: 2025/2026
-Group: K3321
+University: [ITMO University](https://itmo.ru/ru/)<br />
+Faculty: [FICT](https://fict.itmo.ru)<br />
+Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)<br />
+Year: 2025/2026<br />
+Group: K3321<br />
 Author: Stafeev Ivan Alekseevich
 
 Labs:
