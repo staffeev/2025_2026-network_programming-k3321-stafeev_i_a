@@ -142,7 +142,7 @@ ListenPort = 51820
 PrivateKey = ${SERVER_PRIVATE_KEY}
 
 [Peer]
-PublicKey = <PUBLIC_KEY>
+PublicKey = PNSVkq0YIxunT16UpfcRscH3HKlQmODP1FRjIvqHPFQ=
 AllowedIPs = 10.10.0.2/32
 EOF
 ```
