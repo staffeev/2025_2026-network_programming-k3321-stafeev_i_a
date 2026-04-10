@@ -1,0 +1,19 @@
+- name: lab2-task1
+  hosts: chr_routers
+  gather_facts: no
+  tasks:
+    - name: Create Ansible user on CHR
+      community.routeros.command:
+        commands:
+          - /user add name="{{ chr_ansible_user }}" password="{{ chr_ansible_password }}" group=full
+      ignore_errors: yes
+
+    - name: Change password for admin
+      community.routeros.command:
+        commands:
+          - /user set admin password="{{ admin_password }}"
+
+    - name: Configure NTP client
+      community.routeros.command:
+        commands:
+          - /system ntp client set enabled=yes servers=0.ru.pool.ntp.org

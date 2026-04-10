@@ -1,0 +1,11 @@
+[chr_routers]
+CHR1 ansible_host=10.10.0.2
+CHR2 ansible_host=10.10.0.3
+
+[chr_routers:vars]
+ansible_user=admin
+ansible_ssh_pass=admin
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=community.routeros.routeros
+ansible_host_key_checking=False
+ansible_ssh_common_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'

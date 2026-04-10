@@ -1,0 +1,41 @@
+- name: Export configs
+  hosts: chr_routers
+  gather_facts: no
+  tasks:
+    - name: Save CHR facts
+      community.routeros.facts:
+        gather_subset: all
+      register: chr_facts
+
+    - name: Save OSPF neighbours
+      community.routeros.command:
+        commands:
+          - /routing ospf neighbor print detail
+      register: chr_ospf_neighbors
+
+    - name: Save OSPF interfaces
+      community.routeros.command:
+        commands:
+          - /routing ospf interface print detail
+      register: chr_ospf_interfaces
+
+    - name: Save full config
+      community.routeros.command:
+        commands:
+          - /export
+      register: chr_export
+
+    - name: Export facts to file
+      ansible.builtin.copy:
+        content: "{{ chr_facts.ansible_facts | to_nice_json }}"
+        dest: "/etc/ansible/export/lab2/{{ inventory_hostname }}_facts.json"
+
+    - name: Export topology to file
+      ansible.builtin.copy:
+        content: "{{ chr_ospf_interfaces.stdout[0] }}\n\n{{ chr_ospf_neighbors.stdout[0] }}"
+        dest: "/etc/ansible/export/lab2/{{ inventory_hostname }}_ospf.txt"
+
+    - name: Export CHR config to file
+      ansible.builtin.copy:
+        content: "{{ chr_export.stdout[0] }}"
+        dest: "/etc/ansible/export/lab2/{{ inventory_hostname }}_export.txt"

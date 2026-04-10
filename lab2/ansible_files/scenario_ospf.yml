@@ -1,0 +1,12 @@
+- name: Configure OSPF
+  hosts: chr_routers
+  gather_facts: no
+  tasks:
+    - name: Apply OSPF config
+      community.routeros.command:
+        commands:
+          - /interface bridge add name=loopback0
+          - /ip address add address="{{ loopback_ip }}/32" interface=loopback0
+          - /routing ospf instance add name=instance0  router-id="{{ loopback_ip }}"
+          - /routing ospf area add name=backbone2 area-id=0.0.0.0 instance=instance0
+          - /routing ospf interface-template add interfaces=wireguard0,loopback0,ether1 area=backbone2 type=ptp
