@@ -1,0 +1,1175 @@
+{
+  "devices": [
+    {
+      "airflow": null,
+      "asset_tag": null,
+      "cluster": null,
+      "comments": "",
+      "config_context": {
+        "ntp": {
+          "enabled": true,
+          "servers": [
+            "0.ru.pool.ntp.org"
+          ]
+        },
+        "ospf": {
+          "instances": [
+            {
+              "areas": [
+                {
+                  "interfaces": [
+                    "wireguard0",
+                    "loopback0",
+                    "ether1"
+                  ],
+                  "name": "backbone2",
+                  "type": "ptp"
+                }
+              ],
+              "name": "instance0"
+            }
+          ],
+          "router_id": "10.200.0.1"
+        },
+        "static_routes": [
+          {
+            "dst": "10.10.0.0/24",
+            "gateway": "wireguard0"
+          }
+        ],
+        "wireguard": {
+          "listen_port": 51820,
+          "mtu": 1420,
+          "peers": [
+            {
+              "allowed_address": "10.10.0.1/24",
+              "endpoint": "147.45.156.85:51820",
+              "name": "peer7",
+              "public_key": "TY09bXKZ/o57R/aTDJWtwmo/EcEifPF1qD5uJsYjCVc="
+            }
+          ]
+        }
+      },
+      "config_template": null,
+      "console_port_count": 0,
+      "console_server_port_count": 0,
+      "created": "2026-04-17T22:02:00.784693Z",
+      "custom_fields": {},
+      "description": "",
+      "device_bay_count": 0,
+      "device_type": {
+        "description": "",
+        "device_count": 2,
+        "display": "CHR",
+        "id": 1,
+        "manufacturer": {
+          "description": "",
+          "display": "Microtik",
+          "id": 1,
+          "name": "Microtik",
+          "slug": "microtik",
+          "url": "http://10.10.0.4:8000/api/dcim/manufacturers/1/"
+        },
+        "model": "CHR",
+        "slug": "chr",
+        "url": "http://10.10.0.4:8000/api/dcim/device-types/1/"
+      },
+      "display": "CHR1",
+      "display_url": "http://10.10.0.4:8000/dcim/devices/1/",
+      "face": null,
+      "front_port_count": 0,
+      "id": 1,
+      "interface_count": 3,
+      "inventory_item_count": 0,
+      "last_updated": "2026-04-18T09:35:25.813716Z",
+      "latitude": null,
+      "local_context_data": {
+        "ntp": {
+          "enabled": true,
+          "servers": [
+            "0.ru.pool.ntp.org"
+          ]
+        },
+        "ospf": {
+          "instances": [
+            {
+              "areas": [
+                {
+                  "interfaces": [
+                    "wireguard0",
+                    "loopback0",
+                    "ether1"
+                  ],
+                  "name": "backbone2",
+                  "type": "ptp"
+                }
+              ],
+              "name": "instance0"
+            }
+          ],
+          "router_id": "10.200.0.1"
+        },
+        "static_routes": [
+          {
+            "dst": "10.10.0.0/24",
+            "gateway": "wireguard0"
+          }
+        ],
+        "wireguard": {
+          "listen_port": 51820,
+          "mtu": 1420,
+          "peers": [
+            {
+              "allowed_address": "10.10.0.1/24",
+              "endpoint": "147.45.156.85:51820",
+              "name": "peer7",
+              "public_key": "TY09bXKZ/o57R/aTDJWtwmo/EcEifPF1qD5uJsYjCVc="
+            }
+          ]
+        }
+      },
+      "location": null,
+      "longitude": null,
+      "module_bay_count": 0,
+      "name": "CHR1",
+      "oob_ip": null,
+      "owner": null,
+      "parent_device": null,
+      "platform": {
+        "_depth": 0,
+        "description": "",
+        "device_count": 0,
+        "display": "RouterOS-v7",
+        "id": 1,
+        "name": "RouterOS-v7",
+        "slug": "routeros-v7",
+        "url": "http://10.10.0.4:8000/api/dcim/platforms/1/",
+        "virtualmachine_count": 0
+      },
+      "position": null,
+      "power_outlet_count": 0,
+      "power_port_count": 0,
+      "primary_ip": null,
+      "primary_ip4": null,
+      "primary_ip6": null,
+      "rack": null,
+      "rear_port_count": 0,
+      "role": {
+        "_depth": 0,
+        "description": "",
+        "device_count": 0,
+        "display": "Router",
+        "id": 1,
+        "name": "Router",
+        "slug": "router",
+        "url": "http://10.10.0.4:8000/api/dcim/device-roles/1/",
+        "virtualmachine_count": 0
+      },
+      "serial": "",
+      "site": {
+        "description": "",
+        "display": "NetProg-lab3",
+        "id": 1,
+        "name": "NetProg-lab3",
+        "slug": "netprog-lab3",
+        "url": "http://10.10.0.4:8000/api/dcim/sites/1/"
+      },
+      "status": {
+        "label": "Active",
+        "value": "active"
+      },
+      "tags": [],
+      "tenant": null,
+      "url": "http://10.10.0.4:8000/api/dcim/devices/1/",
+      "vc_position": null,
+      "vc_priority": null,
+      "virtual_chassis": null
+    },
+    {
+      "airflow": null,
+      "asset_tag": null,
+      "cluster": null,
+      "comments": "",
+      "config_context": {
+        "ntp": {
+          "enabled": true,
+          "servers": [
+            "0.ru.pool.ntp.org"
+          ]
+        },
+        "ospf": {
+          "instances": [
+            {
+              "areas": [
+                {
+                  "interfaces": [
+                    "wireguard0",
+                    "loopback0",
+                    "ether1"
+                  ],
+                  "name": "backbone2",
+                  "type": "ptp"
+                }
+              ],
+              "name": "instance0"
+            }
+          ],
+          "router_id": "10.200.0.2"
+        },
+        "static_routes": [
+          {
+            "dst": "10.10.0.0/24",
+            "gateway": "wireguard0"
+          }
+        ],
+        "wireguard": {
+          "listen_port": 51820,
+          "mtu": 1420,
+          "peers": [
+            {
+              "allowed_address": "10.10.0.1/24",
+              "endpoint": "147.45.156.85:51820",
+              "name": "peer7",
+              "public_key": "TY09bXKZ/o57R/aTDJWtwmo/EcEifPF1qD5uJsYjCVc="
+            }
+          ]
+        }
+      },
+      "config_template": null,
+      "console_port_count": 0,
+      "console_server_port_count": 0,
+      "created": "2026-04-18T09:58:44.883278Z",
+      "custom_fields": {},
+      "description": "",
+      "device_bay_count": 0,
+      "device_type": {
+        "description": "",
+        "device_count": 2,
+        "display": "CHR",
+        "id": 1,
+        "manufacturer": {
+          "description": "",
+          "display": "Microtik",
+          "id": 1,
+          "name": "Microtik",
+          "slug": "microtik",
+          "url": "http://10.10.0.4:8000/api/dcim/manufacturers/1/"
+        },
+        "model": "CHR",
+        "slug": "chr",
+        "url": "http://10.10.0.4:8000/api/dcim/device-types/1/"
+      },
+      "display": "CHR2",
+      "display_url": "http://10.10.0.4:8000/dcim/devices/3/",
+      "face": null,
+      "front_port_count": 0,
+      "id": 3,
+      "interface_count": 3,
+      "inventory_item_count": 0,
+      "last_updated": "2026-04-18T09:58:44.883311Z",
+      "latitude": null,
+      "local_context_data": {
+        "ntp": {
+          "enabled": true,
+          "servers": [
+            "0.ru.pool.ntp.org"
+          ]
+        },
+        "ospf": {
+          "instances": [
+            {
+              "areas": [
+                {
+                  "interfaces": [
+                    "wireguard0",
+                    "loopback0",
+                    "ether1"
+                  ],
+                  "name": "backbone2",
+                  "type": "ptp"
+                }
+              ],
+              "name": "instance0"
+            }
+          ],
+          "router_id": "10.200.0.2"
+        },
+        "static_routes": [
+          {
+            "dst": "10.10.0.0/24",
+            "gateway": "wireguard0"
+          }
+        ],
+        "wireguard": {
+          "listen_port": 51820,
+          "mtu": 1420,
+          "peers": [
+            {
+              "allowed_address": "10.10.0.1/24",
+              "endpoint": "147.45.156.85:51820",
+              "name": "peer7",
+              "public_key": "TY09bXKZ/o57R/aTDJWtwmo/EcEifPF1qD5uJsYjCVc="
+            }
+          ]
+        }
+      },
+      "location": null,
+      "longitude": null,
+      "module_bay_count": 0,
+      "name": "CHR2",
+      "oob_ip": null,
+      "owner": null,
+      "parent_device": null,
+      "platform": {
+        "_depth": 0,
+        "description": "",
+        "device_count": 0,
+        "display": "RouterOS-v7",
+        "id": 1,
+        "name": "RouterOS-v7",
+        "slug": "routeros-v7",
+        "url": "http://10.10.0.4:8000/api/dcim/platforms/1/",
+        "virtualmachine_count": 0
+      },
+      "position": null,
+      "power_outlet_count": 0,
+      "power_port_count": 0,
+      "primary_ip": null,
+      "primary_ip4": null,
+      "primary_ip6": null,
+      "rack": null,
+      "rear_port_count": 0,
+      "role": {
+        "_depth": 0,
+        "description": "",
+        "device_count": 0,
+        "display": "Router",
+        "id": 1,
+        "name": "Router",
+        "slug": "router",
+        "url": "http://10.10.0.4:8000/api/dcim/device-roles/1/",
+        "virtualmachine_count": 0
+      },
+      "serial": "",
+      "site": {
+        "description": "",
+        "display": "NetProg-lab3",
+        "id": 1,
+        "name": "NetProg-lab3",
+        "slug": "netprog-lab3",
+        "url": "http://10.10.0.4:8000/api/dcim/sites/1/"
+      },
+      "status": {
+        "label": "Active",
+        "value": "active"
+      },
+      "tags": [],
+      "tenant": null,
+      "url": "http://10.10.0.4:8000/api/dcim/devices/3/",
+      "vc_position": null,
+      "vc_priority": null,
+      "virtual_chassis": null
+    }
+  ],
+  "export_metadata": {
+    "timestamp": "2026-04-19T12:53:10"
+  },
+  "interfaces": [
+    {
+      "_occupied": false,
+      "bridge": null,
+      "bridge_interfaces": [],
+      "cable": null,
+      "cable_end": null,
+      "connected_endpoints": null,
+      "connected_endpoints_reachable": false,
+      "connected_endpoints_type": null,
+      "count_fhrp_groups": 0,
+      "count_ipaddresses": 0,
+      "created": "2026-04-18T09:05:04.725680Z",
+      "custom_fields": {},
+      "description": "",
+      "device": {
+        "description": "",
+        "display": "CHR1",
+        "id": 1,
+        "name": "CHR1",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+      },
+      "display": "ether1",
+      "display_url": "http://10.10.0.4:8000/dcim/interfaces/1/",
+      "duplex": null,
+      "enabled": true,
+      "id": 1,
+      "l2vpn_termination": null,
+      "label": "",
+      "lag": null,
+      "last_updated": "2026-04-18T09:05:04.725718Z",
+      "link_peers": [],
+      "link_peers_type": null,
+      "mac_address": null,
+      "mac_addresses": [],
+      "mark_connected": false,
+      "mgmt_only": true,
+      "mode": null,
+      "module": null,
+      "mtu": 1500,
+      "name": "ether1",
+      "owner": null,
+      "parent": null,
+      "poe_mode": null,
+      "poe_type": null,
+      "primary_mac_address": null,
+      "qinq_svlan": null,
+      "rf_channel": null,
+      "rf_channel_frequency": null,
+      "rf_channel_width": null,
+      "rf_role": null,
+      "speed": null,
+      "tagged_vlans": [],
+      "tags": [],
+      "tx_power": null,
+      "type": {
+        "label": "Virtual",
+        "value": "virtual"
+      },
+      "untagged_vlan": null,
+      "url": "http://10.10.0.4:8000/api/dcim/interfaces/1/",
+      "vdcs": [],
+      "vlan_translation_policy": null,
+      "vrf": null,
+      "wireless_lans": [],
+      "wireless_link": null,
+      "wwn": null
+    },
+    {
+      "_occupied": false,
+      "bridge": null,
+      "bridge_interfaces": [],
+      "cable": null,
+      "cable_end": null,
+      "connected_endpoints": null,
+      "connected_endpoints_reachable": false,
+      "connected_endpoints_type": null,
+      "count_fhrp_groups": 0,
+      "count_ipaddresses": 1,
+      "created": "2026-04-18T09:06:30.111099Z",
+      "custom_fields": {},
+      "description": "Interface for OSPF",
+      "device": {
+        "description": "",
+        "display": "CHR1",
+        "id": 1,
+        "name": "CHR1",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+      },
+      "display": "loopback0",
+      "display_url": "http://10.10.0.4:8000/dcim/interfaces/2/",
+      "duplex": null,
+      "enabled": true,
+      "id": 2,
+      "l2vpn_termination": null,
+      "label": "",
+      "lag": null,
+      "last_updated": "2026-04-18T09:06:30.111131Z",
+      "link_peers": [],
+      "link_peers_type": null,
+      "mac_address": null,
+      "mac_addresses": [],
+      "mark_connected": false,
+      "mgmt_only": false,
+      "mode": null,
+      "module": null,
+      "mtu": 65536,
+      "name": "loopback0",
+      "owner": null,
+      "parent": null,
+      "poe_mode": null,
+      "poe_type": null,
+      "primary_mac_address": null,
+      "qinq_svlan": null,
+      "rf_channel": null,
+      "rf_channel_frequency": null,
+      "rf_channel_width": null,
+      "rf_role": null,
+      "speed": null,
+      "tagged_vlans": [],
+      "tags": [],
+      "tx_power": null,
+      "type": {
+        "label": "Bridge",
+        "value": "bridge"
+      },
+      "untagged_vlan": null,
+      "url": "http://10.10.0.4:8000/api/dcim/interfaces/2/",
+      "vdcs": [],
+      "vlan_translation_policy": null,
+      "vrf": null,
+      "wireless_lans": [],
+      "wireless_link": null,
+      "wwn": null
+    },
+    {
+      "_occupied": false,
+      "bridge": null,
+      "bridge_interfaces": [],
+      "cable": null,
+      "cable_end": null,
+      "connected_endpoints": null,
+      "connected_endpoints_reachable": false,
+      "connected_endpoints_type": null,
+      "count_fhrp_groups": 0,
+      "count_ipaddresses": 1,
+      "created": "2026-04-18T09:08:00.957613Z",
+      "custom_fields": {},
+      "description": "Interface for Wireguard tunnel",
+      "device": {
+        "description": "",
+        "display": "CHR1",
+        "id": 1,
+        "name": "CHR1",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+      },
+      "display": "wireguard0",
+      "display_url": "http://10.10.0.4:8000/dcim/interfaces/3/",
+      "duplex": null,
+      "enabled": true,
+      "id": 3,
+      "l2vpn_termination": null,
+      "label": "",
+      "lag": null,
+      "last_updated": "2026-04-18T09:08:00.957643Z",
+      "link_peers": [],
+      "link_peers_type": null,
+      "mac_address": null,
+      "mac_addresses": [],
+      "mark_connected": false,
+      "mgmt_only": false,
+      "mode": null,
+      "module": null,
+      "mtu": 1420,
+      "name": "wireguard0",
+      "owner": null,
+      "parent": null,
+      "poe_mode": null,
+      "poe_type": null,
+      "primary_mac_address": null,
+      "qinq_svlan": null,
+      "rf_channel": null,
+      "rf_channel_frequency": null,
+      "rf_channel_width": null,
+      "rf_role": null,
+      "speed": null,
+      "tagged_vlans": [],
+      "tags": [],
+      "tx_power": null,
+      "type": {
+        "label": "Virtual",
+        "value": "virtual"
+      },
+      "untagged_vlan": null,
+      "url": "http://10.10.0.4:8000/api/dcim/interfaces/3/",
+      "vdcs": [],
+      "vlan_translation_policy": null,
+      "vrf": null,
+      "wireless_lans": [],
+      "wireless_link": null,
+      "wwn": null
+    },
+    {
+      "_occupied": false,
+      "bridge": null,
+      "bridge_interfaces": [],
+      "cable": null,
+      "cable_end": null,
+      "connected_endpoints": null,
+      "connected_endpoints_reachable": false,
+      "connected_endpoints_type": null,
+      "count_fhrp_groups": 0,
+      "count_ipaddresses": 0,
+      "created": "2026-04-18T09:59:20.547247Z",
+      "custom_fields": {},
+      "description": "",
+      "device": {
+        "description": "",
+        "display": "CHR2",
+        "id": 3,
+        "name": "CHR2",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+      },
+      "display": "ether1",
+      "display_url": "http://10.10.0.4:8000/dcim/interfaces/4/",
+      "duplex": null,
+      "enabled": true,
+      "id": 4,
+      "l2vpn_termination": null,
+      "label": "",
+      "lag": null,
+      "last_updated": "2026-04-18T09:59:20.547349Z",
+      "link_peers": [],
+      "link_peers_type": null,
+      "mac_address": null,
+      "mac_addresses": [],
+      "mark_connected": false,
+      "mgmt_only": true,
+      "mode": null,
+      "module": null,
+      "mtu": 1500,
+      "name": "ether1",
+      "owner": null,
+      "parent": null,
+      "poe_mode": null,
+      "poe_type": null,
+      "primary_mac_address": null,
+      "qinq_svlan": null,
+      "rf_channel": null,
+      "rf_channel_frequency": null,
+      "rf_channel_width": null,
+      "rf_role": null,
+      "speed": null,
+      "tagged_vlans": [],
+      "tags": [],
+      "tx_power": null,
+      "type": {
+        "label": "Virtual",
+        "value": "virtual"
+      },
+      "untagged_vlan": null,
+      "url": "http://10.10.0.4:8000/api/dcim/interfaces/4/",
+      "vdcs": [],
+      "vlan_translation_policy": null,
+      "vrf": null,
+      "wireless_lans": [],
+      "wireless_link": null,
+      "wwn": null
+    },
+    {
+      "_occupied": false,
+      "bridge": null,
+      "bridge_interfaces": [],
+      "cable": null,
+      "cable_end": null,
+      "connected_endpoints": null,
+      "connected_endpoints_reachable": false,
+      "connected_endpoints_type": null,
+      "count_fhrp_groups": 0,
+      "count_ipaddresses": 1,
+      "created": "2026-04-18T09:59:53.463204Z",
+      "custom_fields": {},
+      "description": "",
+      "device": {
+        "description": "",
+        "display": "CHR2",
+        "id": 3,
+        "name": "CHR2",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+      },
+      "display": "loopback0",
+      "display_url": "http://10.10.0.4:8000/dcim/interfaces/5/",
+      "duplex": null,
+      "enabled": true,
+      "id": 5,
+      "l2vpn_termination": null,
+      "label": "",
+      "lag": null,
+      "last_updated": "2026-04-18T09:59:53.463241Z",
+      "link_peers": [],
+      "link_peers_type": null,
+      "mac_address": null,
+      "mac_addresses": [],
+      "mark_connected": false,
+      "mgmt_only": false,
+      "mode": null,
+      "module": null,
+      "mtu": 65536,
+      "name": "loopback0",
+      "owner": null,
+      "parent": null,
+      "poe_mode": null,
+      "poe_type": null,
+      "primary_mac_address": null,
+      "qinq_svlan": null,
+      "rf_channel": null,
+      "rf_channel_frequency": null,
+      "rf_channel_width": null,
+      "rf_role": null,
+      "speed": null,
+      "tagged_vlans": [],
+      "tags": [],
+      "tx_power": null,
+      "type": {
+        "label": "Bridge",
+        "value": "bridge"
+      },
+      "untagged_vlan": null,
+      "url": "http://10.10.0.4:8000/api/dcim/interfaces/5/",
+      "vdcs": [],
+      "vlan_translation_policy": null,
+      "vrf": null,
+      "wireless_lans": [],
+      "wireless_link": null,
+      "wwn": null
+    },
+    {
+      "_occupied": false,
+      "bridge": null,
+      "bridge_interfaces": [],
+      "cable": null,
+      "cable_end": null,
+      "connected_endpoints": null,
+      "connected_endpoints_reachable": false,
+      "connected_endpoints_type": null,
+      "count_fhrp_groups": 0,
+      "count_ipaddresses": 1,
+      "created": "2026-04-18T10:00:11.886010Z",
+      "custom_fields": {},
+      "description": "",
+      "device": {
+        "description": "",
+        "display": "CHR2",
+        "id": 3,
+        "name": "CHR2",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+      },
+      "display": "wireguard0",
+      "display_url": "http://10.10.0.4:8000/dcim/interfaces/6/",
+      "duplex": null,
+      "enabled": true,
+      "id": 6,
+      "l2vpn_termination": null,
+      "label": "",
+      "lag": null,
+      "last_updated": "2026-04-18T10:00:11.886045Z",
+      "link_peers": [],
+      "link_peers_type": null,
+      "mac_address": null,
+      "mac_addresses": [],
+      "mark_connected": false,
+      "mgmt_only": false,
+      "mode": null,
+      "module": null,
+      "mtu": 1420,
+      "name": "wireguard0",
+      "owner": null,
+      "parent": null,
+      "poe_mode": null,
+      "poe_type": null,
+      "primary_mac_address": null,
+      "qinq_svlan": null,
+      "rf_channel": null,
+      "rf_channel_frequency": null,
+      "rf_channel_width": null,
+      "rf_role": null,
+      "speed": null,
+      "tagged_vlans": [],
+      "tags": [],
+      "tx_power": null,
+      "type": {
+        "label": "Virtual",
+        "value": "virtual"
+      },
+      "untagged_vlan": null,
+      "url": "http://10.10.0.4:8000/api/dcim/interfaces/6/",
+      "vdcs": [],
+      "vlan_translation_policy": null,
+      "vrf": null,
+      "wireless_lans": [],
+      "wireless_link": null,
+      "wwn": null
+    }
+  ],
+  "ip_addresses": [
+    {
+      "address": "10.10.0.2/24",
+      "assigned_object": {
+        "_occupied": false,
+        "cable": null,
+        "description": "Interface for Wireguard tunnel",
+        "device": {
+          "description": "",
+          "display": "CHR1",
+          "id": 1,
+          "name": "CHR1",
+          "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+        },
+        "display": "wireguard0",
+        "id": 3,
+        "name": "wireguard0",
+        "url": "http://10.10.0.4:8000/api/dcim/interfaces/3/"
+      },
+      "assigned_object_id": 3,
+      "assigned_object_type": "dcim.interface",
+      "comments": "",
+      "created": "2026-04-18T09:13:18.163516Z",
+      "custom_fields": {},
+      "description": "For VPN tunnel",
+      "display": "10.10.0.2/24",
+      "display_url": "http://10.10.0.4:8000/ipam/ip-addresses/2/",
+      "dns_name": "",
+      "family": {
+        "label": "IPv4",
+        "value": 4
+      },
+      "id": 2,
+      "last_updated": "2026-04-18T09:13:18.163545Z",
+      "nat_inside": null,
+      "nat_outside": [],
+      "owner": null,
+      "role": {
+        "label": "Secondary",
+        "value": "secondary"
+      },
+      "status": {
+        "label": "Active",
+        "value": "active"
+      },
+      "tags": [],
+      "tenant": null,
+      "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/2/",
+      "vrf": null
+    },
+    {
+      "address": "10.10.0.3/24",
+      "assigned_object": {
+        "_occupied": false,
+        "cable": null,
+        "description": "",
+        "device": {
+          "description": "",
+          "display": "CHR2",
+          "id": 3,
+          "name": "CHR2",
+          "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+        },
+        "display": "wireguard0",
+        "id": 6,
+        "name": "wireguard0",
+        "url": "http://10.10.0.4:8000/api/dcim/interfaces/6/"
+      },
+      "assigned_object_id": 6,
+      "assigned_object_type": "dcim.interface",
+      "comments": "",
+      "created": "2026-04-18T10:01:29.793929Z",
+      "custom_fields": {},
+      "description": "For VPN tunnel",
+      "display": "10.10.0.3/24",
+      "display_url": "http://10.10.0.4:8000/ipam/ip-addresses/3/",
+      "dns_name": "",
+      "family": {
+        "label": "IPv4",
+        "value": 4
+      },
+      "id": 3,
+      "last_updated": "2026-04-18T10:01:29.793975Z",
+      "nat_inside": null,
+      "nat_outside": [],
+      "owner": null,
+      "role": {
+        "label": "Secondary",
+        "value": "secondary"
+      },
+      "status": {
+        "label": "Active",
+        "value": "active"
+      },
+      "tags": [],
+      "tenant": null,
+      "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/3/",
+      "vrf": null
+    },
+    {
+      "address": "10.200.0.1/32",
+      "assigned_object": {
+        "_occupied": false,
+        "cable": null,
+        "description": "Interface for OSPF",
+        "device": {
+          "description": "",
+          "display": "CHR1",
+          "id": 1,
+          "name": "CHR1",
+          "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+        },
+        "display": "loopback0",
+        "id": 2,
+        "name": "loopback0",
+        "url": "http://10.10.0.4:8000/api/dcim/interfaces/2/"
+      },
+      "assigned_object_id": 2,
+      "assigned_object_type": "dcim.interface",
+      "comments": "",
+      "created": "2026-04-18T09:12:35.978698Z",
+      "custom_fields": {},
+      "description": "OSPF Router-ID",
+      "display": "10.200.0.1/32",
+      "display_url": "http://10.10.0.4:8000/ipam/ip-addresses/1/",
+      "dns_name": "",
+      "family": {
+        "label": "IPv4",
+        "value": 4
+      },
+      "id": 1,
+      "last_updated": "2026-04-18T09:12:35.978733Z",
+      "nat_inside": null,
+      "nat_outside": [],
+      "owner": null,
+      "role": {
+        "label": "Loopback",
+        "value": "loopback"
+      },
+      "status": {
+        "label": "Active",
+        "value": "active"
+      },
+      "tags": [],
+      "tenant": null,
+      "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/1/",
+      "vrf": null
+    },
+    {
+      "address": "10.200.0.2/32",
+      "assigned_object": {
+        "_occupied": false,
+        "cable": null,
+        "description": "",
+        "device": {
+          "description": "",
+          "display": "CHR2",
+          "id": 3,
+          "name": "CHR2",
+          "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+        },
+        "display": "loopback0",
+        "id": 5,
+        "name": "loopback0",
+        "url": "http://10.10.0.4:8000/api/dcim/interfaces/5/"
+      },
+      "assigned_object_id": 5,
+      "assigned_object_type": "dcim.interface",
+      "comments": "",
+      "created": "2026-04-18T10:01:57.092761Z",
+      "custom_fields": {},
+      "description": "OSPF Router-ID",
+      "display": "10.200.0.2/32",
+      "display_url": "http://10.10.0.4:8000/ipam/ip-addresses/4/",
+      "dns_name": "",
+      "family": {
+        "label": "IPv4",
+        "value": 4
+      },
+      "id": 4,
+      "last_updated": "2026-04-18T10:01:57.092797Z",
+      "nat_inside": null,
+      "nat_outside": [],
+      "owner": null,
+      "role": {
+        "label": "Loopback",
+        "value": "loopback"
+      },
+      "status": {
+        "label": "Active",
+        "value": "active"
+      },
+      "tags": [],
+      "tenant": null,
+      "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/4/",
+      "vrf": null
+    }
+  ],
+  "services": [
+    {
+      "comments": "",
+      "created": "2026-04-18T09:20:37.625658Z",
+      "custom_fields": {},
+      "description": "SSH",
+      "display": "SSH (TCP/22)",
+      "display_url": "http://10.10.0.4:8000/ipam/services/1/",
+      "id": 1,
+      "ipaddresses": [
+        {
+          "address": "10.10.0.2/24",
+          "description": "For VPN tunnel",
+          "display": "10.10.0.2/24",
+          "family": {
+            "label": "IPv4",
+            "value": 4
+          },
+          "id": 2,
+          "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/2/"
+        },
+        {
+          "address": "10.200.0.1/32",
+          "description": "OSPF Router-ID",
+          "display": "10.200.0.1/32",
+          "family": {
+            "label": "IPv4",
+            "value": 4
+          },
+          "id": 1,
+          "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/1/"
+        }
+      ],
+      "last_updated": "2026-04-18T09:20:37.625685Z",
+      "name": "SSH",
+      "owner": null,
+      "parent": {
+        "description": "",
+        "display": "CHR1",
+        "id": 1,
+        "name": "CHR1",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+      },
+      "parent_object_id": 1,
+      "parent_object_type": "dcim.device",
+      "ports": [
+        22
+      ],
+      "protocol": {
+        "label": "TCP",
+        "value": "tcp"
+      },
+      "tags": [],
+      "url": "http://10.10.0.4:8000/api/ipam/services/1/"
+    },
+    {
+      "comments": "",
+      "created": "2026-04-18T10:04:40.942779Z",
+      "custom_fields": {},
+      "description": "SSH",
+      "display": "SSH (TCP/22)",
+      "display_url": "http://10.10.0.4:8000/ipam/services/3/",
+      "id": 3,
+      "ipaddresses": [
+        {
+          "address": "10.10.0.3/24",
+          "description": "For VPN tunnel",
+          "display": "10.10.0.3/24",
+          "family": {
+            "label": "IPv4",
+            "value": 4
+          },
+          "id": 3,
+          "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/3/"
+        },
+        {
+          "address": "10.200.0.2/32",
+          "description": "OSPF Router-ID",
+          "display": "10.200.0.2/32",
+          "family": {
+            "label": "IPv4",
+            "value": 4
+          },
+          "id": 4,
+          "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/4/"
+        }
+      ],
+      "last_updated": "2026-04-18T10:04:40.942807Z",
+      "name": "SSH",
+      "owner": null,
+      "parent": {
+        "description": "",
+        "display": "CHR2",
+        "id": 3,
+        "name": "CHR2",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+      },
+      "parent_object_id": 3,
+      "parent_object_type": "dcim.device",
+      "ports": [
+        22
+      ],
+      "protocol": {
+        "label": "TCP",
+        "value": "tcp"
+      },
+      "tags": [],
+      "url": "http://10.10.0.4:8000/api/ipam/services/3/"
+    },
+    {
+      "comments": "",
+      "created": "2026-04-18T09:21:11.756267Z",
+      "custom_fields": {},
+      "description": "",
+      "display": "Wireguard (UDP/51820)",
+      "display_url": "http://10.10.0.4:8000/ipam/services/2/",
+      "id": 2,
+      "ipaddresses": [
+        {
+          "address": "10.10.0.2/24",
+          "description": "For VPN tunnel",
+          "display": "10.10.0.2/24",
+          "family": {
+            "label": "IPv4",
+            "value": 4
+          },
+          "id": 2,
+          "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/2/"
+        }
+      ],
+      "last_updated": "2026-04-18T09:21:11.756294Z",
+      "name": "Wireguard",
+      "owner": null,
+      "parent": {
+        "description": "",
+        "display": "CHR1",
+        "id": 1,
+        "name": "CHR1",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/1/"
+      },
+      "parent_object_id": 1,
+      "parent_object_type": "dcim.device",
+      "ports": [
+        51820
+      ],
+      "protocol": {
+        "label": "UDP",
+        "value": "udp"
+      },
+      "tags": [],
+      "url": "http://10.10.0.4:8000/api/ipam/services/2/"
+    },
+    {
+      "comments": "",
+      "created": "2026-04-18T10:05:03.959687Z",
+      "custom_fields": {},
+      "description": "",
+      "display": "Wireguard (UDP/51820)",
+      "display_url": "http://10.10.0.4:8000/ipam/services/4/",
+      "id": 4,
+      "ipaddresses": [
+        {
+          "address": "10.10.0.3/24",
+          "description": "For VPN tunnel",
+          "display": "10.10.0.3/24",
+          "family": {
+            "label": "IPv4",
+            "value": 4
+          },
+          "id": 3,
+          "url": "http://10.10.0.4:8000/api/ipam/ip-addresses/3/"
+        }
+      ],
+      "last_updated": "2026-04-18T10:05:03.959714Z",
+      "name": "Wireguard",
+      "owner": null,
+      "parent": {
+        "description": "",
+        "display": "CHR2",
+        "id": 3,
+        "name": "CHR2",
+        "url": "http://10.10.0.4:8000/api/dcim/devices/3/"
+      },
+      "parent_object_id": 3,
+      "parent_object_type": "dcim.device",
+      "ports": [
+        51820
+      ],
+      "protocol": {
+        "label": "UDP",
+        "value": "udp"
+      },
+      "tags": [],
+      "url": "http://10.10.0.4:8000/api/ipam/services/4/"
+    }
+  ]
+}

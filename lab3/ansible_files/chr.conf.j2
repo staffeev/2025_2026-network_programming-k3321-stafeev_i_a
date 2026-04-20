@@ -1,0 +1,83 @@
+{% set dev = (devices | selectattr("name", "equalto", inventory_hostname) | list | first) %}
+
+### NAME ###
+
+/system identity set name={{ dev.name }}
+
+### INTERFACES ###
+
+{% for iface in interfaces if iface.device.id == dev.id %}
+
+{% if iface.type.value == "bridge" %}
+/interface bridge
+add name={{ iface.name }}
+
+{% elif iface.name.startswith("wireguard") %}
+/interface wireguard
+add name={{ iface.name }} listen-port={{ dev.config_context.wireguard.listen_port }} mtu={{ dev.config_context.wireguard.mtu }}
+
+{% elif iface.type.value != "bridge" and not iface.name.startswith("wireguard") %}
+/interface ethernet
+set [find name={{ iface.name }}] disable-running-check=no
+{% endif %}
+
+{% endfor %}
+
+
+### WIREGUARD PEERS ###
+
+{% if dev.config_context.wireguard is defined %}
+{% set wg_iface = (interfaces | selectattr("type.value", "equalto", "virtual") | selectattr("mtu", "equalto", dev.config_context.wireguard.mtu) | list | first) %}
+
+/interface wireguard peers
+{% for peer in dev.config_context.wireguard.peers %}
+add interface={{ wg_iface.name }} name={{ peer.name }} public-key="{{ peer.public_key }}" endpoint-address={{ peer.endpoint.split(':')[0] }} endpoint-port={{ peer.endpoint.split(':')[1] }} allowed-address={{ peer.allowed_address }}
+{% endfor %}
+{% endif %}
+
+
+### IP ADDRESSES ###
+
+/ip address
+{% for ip in ip_addresses if ip.assigned_object.device.id == dev.id %}
+add address={{ ip.address }} interface={{ ip.assigned_object.name }}
+{% endfor %}
+
+
+### STATIC ROUTES ### 
+
+{% if dev.config_context.static_routes is defined %}
+/ip route
+{% for r in dev.config_context.static_routes %}
+add dst-address={{ r.dst }} gateway={{ r.gateway }}
+{% endfor %}
+{% endif %}
+
+
+### OSPF ###
+
+{% set ospf = dev.config_context.ospf %}
+
+/routing ospf instance
+{% for inst in ospf.instances %}
+add name={{ inst.name }} router-id={{ ospf.router_id }}
+{% endfor %}
+
+/routing ospf area
+{% for inst in ospf.instances %}
+{% for area in inst.areas %}
+add name={{ area.name }} instance={{ inst.name }}
+{% endfor %}
+{% endfor %}
+
+/routing ospf interface-template
+{% for inst in ospf.instances %}
+{% for area in inst.areas %}
+add area={{ area.name }} interfaces={{ area.interfaces | join(",") }} type={{ area.type }}
+{% endfor %}
+{% endfor %}
+
+
+### NTP ###
+
+/system ntp client set enabled=yes servers={{ dev.config_context.ntp.servers | join(",") }}

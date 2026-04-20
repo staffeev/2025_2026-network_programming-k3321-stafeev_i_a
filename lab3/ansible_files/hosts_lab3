@@ -1,0 +1,14 @@
+[chr_routers]
+CHR1 ansible_host=192.168.3.16
+CHR2 ansible_host=192.168.3.17
+
+[netbox]
+Netbox ansible_host=10.10.0.4
+
+[chr_routers:vars]
+ansible_user=admin
+ansible_ssh_pass=admin
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=community.routeros.routeros
+ansible_host_key_checking=False
+ansible_ssh_common_args='-o ProxyJump=admin@10.10.0.4 -o StrictHostKeyChecking=no'

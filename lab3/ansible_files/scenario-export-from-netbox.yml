@@ -1,0 +1,84 @@
+- name: Export data from NetBox
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    netbox_url: "http://{{ hostvars['Netbox'].ansible_host }}:8000"
+    api_token: "{{ hostvars['Netbox'].netbox_token }}"
+    output_dir: "/etc/ansible/export/lab3"
+    output_file: "netbox_export.json"
+    target_devices: ["CHR1", "CHR2"]
+    device_filter: "name__in={{ target_devices | join(',') }}"
+
+  tasks:
+    - name: Collect devices
+      set_fact:
+        devices_raw: >-
+          {{
+            lookup(
+              'netbox.netbox.nb_lookup',
+              'devices',
+              api_endpoint=netbox_url,
+              token=api_token,
+              validate_certs=False,
+              api_filter=device_filter
+            )
+          }}
+
+    - name: Collect interfaces
+      set_fact:
+        interfaces_raw: >-
+          {{
+            lookup(
+              'netbox.netbox.nb_lookup',
+              'interfaces',
+              api_endpoint=netbox_url,
+              token=api_token,
+              validate_certs=False,
+              api_filter=device_filter
+            )
+          }}
+
+    - name: Collect IP addresses
+      set_fact:
+        ip_raw: >-
+          {{
+            lookup(
+              'netbox.netbox.nb_lookup',
+              'ip-addresses',
+              api_endpoint=netbox_url,
+              token=api_token,
+              validate_certs=False,
+              api_filter=device_filter
+            )
+          }}
+
+    - name: Collect services
+      set_fact:
+        services_raw: >-
+          {{
+            lookup(
+              'netbox.netbox.nb_lookup',
+              'services',
+              api_endpoint=netbox_url,
+              token=api_token,
+              validate_certs=False,
+              api_filter=device_filter
+            )
+          }}
+
+    - name: Build JSON
+      set_fact:
+        netbox_export:
+          export_metadata:
+            timestamp: "{{ now(utc=True).strftime('%Y-%m-%dT%H:%M:%S') }}"
+          devices: "{{ devices_raw | map(attribute='value') | list }}"
+          interfaces: "{{ interfaces_raw | map(attribute='value') | list }}"
+          ip_addresses: "{{ ip_raw | map(attribute='value') | list }}"
+          services: "{{ services_raw | map(attribute='value') | list }}"
+
+    - name: Save JSON to file
+      ansible.builtin.copy:
+        content: "{{ netbox_export | to_nice_json(indent=2) }}"
+        dest: "{{ output_dir }}/{{ output_file }}"
+        mode: '0644'

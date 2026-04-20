@@ -1,0 +1,45 @@
+- name: Collect CHR serial number and upload to Netbox
+  hosts: chr_routers
+  gather_facts: no
+  vars:
+    netbox_url: "http://{{ hostvars['Netbox'].ansible_host }}:8000"
+    netbox_token: "{{ hostvars['Netbox'].netbox_token }}"
+
+  tasks:
+    - name: Get license info
+      community.routeros.command:
+        commands:
+          - /system license print
+      register: license_info
+
+    - name: Extract system-id
+      set_fact:
+        serial_number: >-
+          {{ license_info.stdout[0]
+           | regex_search('system-id: ([^\s]+)', '\1')
+           | first }}
+
+    - name: Show serial
+      debug:
+        msg: "Serial for {{ inventory_hostname }} = {{ serial_number }}"
+
+    - name: Get device from NetBox
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/?name={{ inventory_hostname }}"
+        method: GET
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+      register: device_data
+
+    - name: Update serial in NetBox
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/{{ device_data.json.results[0].id }}/"
+        method: PATCH
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body_format: json
+        body:
+          serial: "{{ serial_number | string }}"
+      when: device_data.json.count > 0

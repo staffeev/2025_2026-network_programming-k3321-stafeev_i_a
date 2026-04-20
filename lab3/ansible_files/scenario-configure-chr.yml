@@ -1,0 +1,27 @@
+- name: Configure CHR from Netbox
+  hosts: chr_routers
+  gather_facts: no
+  vars_files:
+    - /etc/ansible/export/lab3/netbox_export.json
+  vars:
+    jump_host: 10.10.0.4
+  tasks:
+
+    - name: Render config locally
+      template:
+        src: /etc/ansible/templates/chr.conf.j2
+        dest: "/tmp/{{ inventory_hostname }}.rsc"
+      delegate_to: localhost
+
+    - name: Upload config to CHR via Netbox
+      ansible.builtin.shell: |
+        sshpass -p {{ ansible_password }} scp \
+        -o StrictHostKeyChecking=no \
+        -o ProxyCommand="sshpass -p {{ ansible_password }} ssh -o StrictHostKeyChecking=no -W %h:%p {{ ansible_user }}@{{ jump_host }}" \
+        /tmp/{{ inventory_hostname }}.rsc \
+        {{ ansible_user }}@{{ ansible_host }}:/{{ inventory_hostname }}.rsc
+
+    - name: Apply config on CHR
+      community.routeros.command:
+        commands:
+          - /import file-name={{ inventory_hostname }}.rsc
