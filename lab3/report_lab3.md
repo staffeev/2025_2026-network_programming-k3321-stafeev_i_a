@@ -4,7 +4,7 @@ Course: [Network programming](https://github.com/itmo-ict-faculty/network-progra
 Year: 2025/2026<br />
 Group: K3321<br />
 Author: Stafeev Ivan Alekseevich<br />
-Lab: Lab1<br />
+Lab: Lab3<br />
 Date of create: 17.04.2026<br />
 Date of finished: 20.04.2026<br />
 
